@@ -18,7 +18,7 @@ After building this, navigate to `` target/release ``, where you will find the e
 To call the underlying rust functions, import the `` radon_lib.pyd `` that you created earlier in your python file, `` radon_trial.py `` for example.
 
 ```
-import randon_lib
+import radon_lib
 ```
 
 You **must** make sure that `` radon_lib.pyd `` is present in the same directory as `` randon_trial.py ``. 
@@ -29,3 +29,6 @@ Once this step is done, you can load the image of choice and visualize the Radon
 python3 radon_trial.py
 ```
 
+## Why is there a struct named "Tissue" in the Rust implementation?
+
+Radon Transform is the heart of the [Computed Tomography (CT Scan)](https://en.wikipedia.org/wiki/CT_scan), which is used for non-invasive diagnosis. The CT Scan is capable of reconstructing the 3-D tissue (along with their attenuation coefficient, meaning how dense is the tissue) by taking multiple 2-D X-Ray slices and stiching them up. The 3-D reconstruction of the original tissue is done by a process called "backprojection" aka the Inverse Radon Transform. I found this interesting and thought I would try it, therefore calling the image struct as "Tissue". Feel free to change that name if you want to use this code for some reason.  
