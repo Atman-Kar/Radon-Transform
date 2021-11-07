@@ -1,0 +1,17 @@
+[package]
+name = "radonlib"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rand = "0.8.0"
+
+[lib]
+name = "radon_lib"
+crate-type = ["cdylib"]
+
+[dependencies.pyo3]
+version = "0.14.4"
+features = ["extension-module"]
